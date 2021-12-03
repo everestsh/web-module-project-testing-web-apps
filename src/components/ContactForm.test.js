@@ -142,14 +142,13 @@ test('renders all firstName, lastName and email text when submitted. Does NOT re
     userEvent.click(button);
 
     await waitFor(()=> {
-        const firstnameDisplay = screen.queryByText("Sooof");
-        const lastnameDisplay = screen.queryByText("Gate");
-        const emailDisplay = screen.queryByText("sooof@me.com");
+   
         const messageDisplay = screen.queryByTestId("messageDisplay");
 
-        expect(firstnameDisplay).toBeInTheDocument();
-        expect(lastnameDisplay).toBeInTheDocument();
-        expect(emailDisplay).toBeInTheDocument();
+
+        expect(firstName).toBeInTheDocument();
+        expect(lastName).toBeInTheDocument();
+        expect(email).toBeInTheDocument();
         expect(messageDisplay).not.toBeInTheDocument();
     });
     
